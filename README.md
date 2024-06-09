@@ -1,9 +1,10 @@
-# Welcome to your CDK TypeScript Construct Library project
+# CdkKeyPair
 
-You should explore the contents of this project. It demonstrates a CDK Construct Library that includes a construct (`CdkKeyPair`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+Provides a custom resource for generating RSA-2048 key pairs at deploy-time, within a cdk stack.
 
-The construct defines an interface (`CdkKeyPairProps`) to configure the visibility timeout of the queue.
+This is useful where you need an public/private key value at deploy time. For example CloudFront [signed urls](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-signed-urls.html) require a public key. 
+
+Using this construct ensures no secrets are included in the CloudFormation template; they are all generated at deploy-time.
 
 ## Useful commands
 
